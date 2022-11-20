@@ -16,7 +16,7 @@ export class ResultPageComponent implements OnInit {
   show:boolean =true;
   data:Array<string> = [];
 
-  constructor(private navServ :NavigatorService ,private dataShare:DataSharingService) {
+  constructor(private navServ :NavigatorService ,private dataShare:DataSharingService ,private router: Router) {
     this.dataShare.data.subscribe( (value: Array<string> ) => {
       this.data = value;  });
     }
@@ -27,6 +27,10 @@ export class ResultPageComponent implements OnInit {
 
    console.log("Datas:", this.data);
 
+}
+navigate(){
+  this.dataShare.isSubmitted.next(false);
+  this.router.navigate(['/']);
 }
 onClickMe(event?: MouseEvent) {
   const evtMsg = event ? ' Event target class is ' + (event.target as HTMLElement).className  : '';
