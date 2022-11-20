@@ -1,0 +1,103 @@
+<style>
+  .home-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 50vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .home-container1 {
+    width: 550px;
+    height: 319px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .home-text {
+    align-self: flex-end;
+    direction: rtl;
+
+    padding-top: 25px;
+
+    padding-right: 30px;
+    padding-bottom: 25px;
+  }
+  .home-text1 {
+    color: blueviolet;
+    padding-top: 12px;
+    padding-bottom: 24px;
+  }
+  .home-container2 {
+    width: auto;
+    height: 0px;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 24px;
+    justify-content: center;
+  }
+  .home-text7 {
+    font-size: 25px;
+    align-self: center;
+     font-size: 30px;
+    color: blueviolet;
+  }
+  .home-link {
+    color: var(--dl-color-primary-100);
+    font-size: 20px;
+    align-self: center;
+    font-style: normal;
+    text-align: center;
+    font-weight: 800;
+  }
+  .textStyle{
+    font-size: 30px;
+    color: blueviolet;
+    line-height: 1.71;
+  }
+  .home-container3 {
+    background-color: transparent;
+    width: 940px;
+
+  display: flex;
+  padding: 30px;
+  align-self: center;
+  align-items: center;
+  border-color: red;
+  border-style: none;
+  flex-direction: column;
+  justify-content: center;
+}
+</style>
+
+
+<div>
+  <div class="home-container">
+    <div class="home-container1">
+      <span class="home-text">dasdasfs</span>
+      <!-- <h2 class="home-text1">
+        <span >Event </span>
+        <br />
+      </h2> -->
+      <span class="textStyle">{{data[0]}}</span>
+      <span class="textStyle"> Peoples attending:{{data[1]}}</span>
+      <span class="textStyle">10:40 am</span>
+      <div class="home-container2">
+        <span class="home-text7">Edit Details </span>
+        <a
+          href="/"
+         
+          rel="noreferrer noopener"
+          class="home-link"
+        >
+          Click Here
+        </a>
+      </div>
+  
+    </div>
+    <div class="home-container3"></div>
+  </div>
+</div>

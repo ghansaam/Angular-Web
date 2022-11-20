@@ -1,0 +1,99 @@
+<style type="text/css">
+  .invitation-back-text {
+    font-size: 16x;
+  }
+
+  .invitation-back-button a {
+    font-size: 16x;
+  }
+
+  .invitation-button::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50px;
+    left: 100px;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+  }
+
+  #sending_guest_request {
+    background: linear-gradient(135.45deg, #9a86bf 0, #b3a6d3 100%);
+  }
+
+  @keyframes button-loading-spinner {
+    from {
+      transform: rotate(0turn);
+    }
+
+    to {
+      transform: rotate(1turn);
+    }
+  }
+</style>
+
+<div *ngIf="show">
+  <div class="bodyText1">
+    <p><strong>נא אשרו הגעתכם בתחתית העמוד</strong></p>
+  </div>
+
+  <!-- dib -->
+
+  <div class="bodyText2">
+    <p>dsafas</p>
+  </div>
+  
+
+
+  <form #bindProject="ngForm" (ngSubmit)="bindUserToProject()" >
+    <div class="center">
+      <p>Submit Details Here</p>
+
+      <div class="grid-container">
+
+        <div class="grid-item">
+          <label for="peoples">Choose no of Peoples:</label><br />
+          <select
+            name="userId"
+            [(ngModel)]="selectedPeoples"
+            class="form-control"
+            required
+          >
+            <option disabled>-Please choose no Of Peoples-</option>
+            <option *ngFor="let item of peoples" [ngValue]="item.userId">
+              {{ item.userCount }}
+            </option>
+          </select>
+        </div>
+       
+        <div class="grid-item">
+          <label for="location">Choose a Location:</label>
+          <select
+            name="locationId"
+            [(ngModel)]="selectedLocation"
+            class="form-control"
+            required
+          >
+            <option disabled>-Please choose Location-</option>
+            <option *ngFor="let item of locations" [ngValue]="item.locationId">
+              {{ item.locationIdName }}
+            </option>
+          </select>
+        </div>
+        
+      </div>
+     
+      <br>
+    </div>
+    <button class="bio-register-btn c-btn" type="submit" [disabled]="!bindProject.valid"  >
+     Register
+    </button>
+  </form>
+  <div style="height: 12px;"></div>
+</div>
